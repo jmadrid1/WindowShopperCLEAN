@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "915624896926",
+    "project_id": "windowshopperclean",
+    "storage_bucket": "windowshopperclean.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915624896926:android:2d6ee0173ed5a919face8f",
+        "android_client_info": {
+          "package_name": "com.example.windowshopperclean"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "915624896926-4792mest815aeljdgbtjm98nd989ute8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7eUgtYemzLJpqowQdKWUEDoiLA3oH2Go"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "915624896926-4792mest815aeljdgbtjm98nd989ute8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
