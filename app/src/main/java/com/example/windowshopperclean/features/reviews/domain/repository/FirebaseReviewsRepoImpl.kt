@@ -1,7 +1,7 @@
 package com.example.windowshopperclean.features.reviews.domain.repository
 
 import com.example.windowshopperclean.core.common.Result
-import com.example.windowshopperclean.features.reviews.data.remote.FirebaseReviewsDAO
+import com.example.windowshopperclean.features.reviews.data.remote.FirebaseReviewsRepo
 import com.example.windowshopperclean.features.reviews.data.Review
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -14,8 +14,8 @@ import kotlinx.coroutines.channels.sendBlocking
 import kotlinx.coroutines.flow.callbackFlow
 import javax.inject.Inject
 
-class FirebaseReviewsRepo @Inject constructor(
-    private var database: DatabaseReference) : FirebaseReviewsDAO {
+class FirebaseReviewsRepoImpl @Inject constructor(
+    private var database: DatabaseReference) : FirebaseReviewsRepo {
 
     companion object {
         const val KEY_INVENTORY = "inventory"

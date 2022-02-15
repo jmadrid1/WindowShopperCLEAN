@@ -4,7 +4,7 @@ import com.example.windowshopperclean.core.common.Result
 import com.example.windowshopperclean.features.reviews.data.Review
 import kotlinx.coroutines.flow.Flow
 
-interface FirebaseReviewsDAO {
+interface FirebaseReviewsRepo {
 
     fun getReviews(itemId: String): Flow<Result<List<Review>>>
 
