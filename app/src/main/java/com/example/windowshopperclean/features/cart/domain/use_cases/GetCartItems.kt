@@ -1,11 +1,11 @@
 package com.example.windowshopperclean.features.cart.domain.use_cases
 
-import com.example.windowshopperclean.features.cart.data.remote.FirebaseCartRepo
+import com.example.windowshopperclean.features.cart.data.remote.FirebaseCartRepoImpl
 import javax.inject.Inject
 
 class GetCartItems @Inject constructor(
-    private val _firebase: FirebaseCartRepo){
+    private val _firebaseImpl: FirebaseCartRepoImpl){
 
-    suspend operator fun invoke(uid :String) = _firebase.getCartItems(uid)
+    suspend operator fun invoke(uid :String) = _firebaseImpl.getCartItems(uid)
 
 }
