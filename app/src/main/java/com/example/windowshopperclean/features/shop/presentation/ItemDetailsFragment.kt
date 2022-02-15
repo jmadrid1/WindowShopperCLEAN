@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide
 import com.example.windowshopperclean.R
 import com.example.windowshopperclean.databinding.FragmentItemDetailsBinding
 import com.example.windowshopperclean.features.cart.presentation.CartActivity
+import com.example.windowshopperclean.features.login.presentation.LoginActivity
 import com.example.windowshopperclean.features.shop.data.CartItem
 import com.example.windowshopperclean.features.shop.data.Item
 import com.google.firebase.auth.FirebaseAuth
@@ -99,8 +100,6 @@ class ItemDetailsFragment : Fragment(R.layout.fragment_item_details) {
     }
 
     private fun addToCart(item: Item){
-        val uid : String = auth.currentUser.uid
-
         val id : Int = item.id
         val title : String = item.title
         val sizeSelectedID : Int = binding.fragmentDetailsRadioGroupSizes.checkedRadioButtonId
@@ -117,10 +116,22 @@ class ItemDetailsFragment : Fragment(R.layout.fragment_item_details) {
 
         val cartItem = CartItem(id, title, size, price, thumbnail, quantity)
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.addItemToCart(cartItem, uid)
-            findNavController().popBackStack()
+        val currentUser = auth.currentUser
+        if(currentUser == null){
+            navigateToLogin()
+        }else{
+            val uid : String = currentUser.uid
+            viewLifecycleOwner.lifecycleScope.launch {
+                viewModel.addItemToCart(cartItem, uid)
+                findNavController().popBackStack()
+            }
         }
+    }
+
+    private fun navigateToLogin(){
+        val intent = Intent(context, LoginActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
     }
 
     private fun navigateToReviews(item: Item){
