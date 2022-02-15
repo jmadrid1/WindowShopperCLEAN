@@ -1,11 +1,11 @@
 package com.example.windowshopperclean.features.shop.domain.use_cases
 
-import com.example.windowshopperclean.features.shop.data.remote.FirebaseShopRepo
+import com.example.windowshopperclean.features.shop.data.remote.FirebaseShopRepoImpl
 import javax.inject.Inject
 
 class GetClothes @Inject constructor(
-    private val _firebase: FirebaseShopRepo) {
+    private val _firebaseImpl: FirebaseShopRepoImpl) {
 
-    suspend operator fun invoke() = _firebase.getClothes()
+    suspend operator fun invoke() = _firebaseImpl.getClothes()
 
 }

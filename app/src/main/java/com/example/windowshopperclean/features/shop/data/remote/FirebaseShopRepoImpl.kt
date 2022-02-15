@@ -3,7 +3,7 @@ package com.example.windowshopperclean.features.shop.data.remote
 import com.example.windowshopperclean.core.common.Result
 import com.example.windowshopperclean.features.shop.data.CartItem
 import com.example.windowshopperclean.features.shop.data.Item
-import com.example.windowshopperclean.features.shop.domain.repository.FirebaseShopDAO
+import com.example.windowshopperclean.features.shop.domain.repository.FirebaseShopRepo
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -15,8 +15,8 @@ import kotlinx.coroutines.channels.sendBlocking
 import kotlinx.coroutines.flow.callbackFlow
 import javax.inject.Inject
 
-class FirebaseShopRepo @Inject constructor(
-    private var database: DatabaseReference) : FirebaseShopDAO {
+class FirebaseShopRepoImpl @Inject constructor(
+    private var database: DatabaseReference) : FirebaseShopRepo {
 
     companion object {
         const val KEY_USERS = "users"
