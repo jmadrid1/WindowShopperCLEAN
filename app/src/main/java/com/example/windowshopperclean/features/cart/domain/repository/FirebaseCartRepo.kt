@@ -4,7 +4,7 @@ import com.example.windowshopperclean.core.common.Result
 import com.example.windowshopperclean.features.shop.data.CartItem
 import kotlinx.coroutines.flow.Flow
 
-interface FirebaseCartRepoDAO {
+interface FirebaseCartRepo {
 
     fun getCartItems(uid: String): Flow<Result<List<CartItem>>>
 

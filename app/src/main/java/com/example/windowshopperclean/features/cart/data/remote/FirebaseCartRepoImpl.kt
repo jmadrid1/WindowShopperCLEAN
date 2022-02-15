@@ -1,7 +1,7 @@
 package com.example.windowshopperclean.features.cart.data.remote
 
 import com.example.windowshopperclean.core.common.Result
-import com.example.windowshopperclean.features.cart.domain.repository.FirebaseCartRepoDAO
+import com.example.windowshopperclean.features.cart.domain.repository.FirebaseCartRepo
 import com.example.windowshopperclean.features.shop.data.CartItem
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -14,8 +14,8 @@ import kotlinx.coroutines.channels.sendBlocking
 import kotlinx.coroutines.flow.callbackFlow
 import javax.inject.Inject
 
-class FirebaseCartRepo @Inject constructor(
-    private var database: DatabaseReference) : FirebaseCartRepoDAO {
+class FirebaseCartRepoImpl @Inject constructor(
+    private var database: DatabaseReference) : FirebaseCartRepo {
 
     companion object {
         const val KEY_USERS = "users"
